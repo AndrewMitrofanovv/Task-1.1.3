@@ -5,6 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
+
+    private static Util instance;
+    private Util() {
+
+    }
     public static final String DB_URL = "jdbc:mysql://localhost:3306/users";
     public static final String DB_USERNAME = "root";
     public static final String DB_PASSWORD = "root";
@@ -23,5 +28,12 @@ public class Util {
             System.out.println("Connection Error");
         }
         return connection;
+    }
+
+    public static Util getInstance() {
+        if (instance == null) {
+            instance = new Util();
+        }
+        return instance;
     }
 }
