@@ -52,6 +52,7 @@ public class UserServiceTest {
 
         } catch (Exception e) {
             Assert.fail("Во время тестирования сохранения пользователя произошло исключение\n" + e);
+            e.printStackTrace();
         }
     }
 
